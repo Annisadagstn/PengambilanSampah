@@ -10,44 +10,48 @@
     <title>Document</title>
 </head>
 <body>
-    <form action={{route("/sampah/store")}} method="post">
-        @csrf
-        <div class="mb-3 mt-5">
-            <label for="name" class="form-label">Nama</label>
-            <input type="text" name="nama" class="form-control" id="nama">
-        </div>
+    <div class="w-50 m-auto py-4">
+        <h2 class="text-center">Tambah Data Sampah</h2>
+        <form action={{route("store_trash")}} method="post">
+            @csrf
+            <div class="mb-3 mt-5">
+                <label for="name" class="form-label">kepala keluarga</label>
+                <input type="text" name="kepala_keluarga" class="form-control" id="nama">
+            </div>
+    
+            <div class="mb-3">
+                <label for="name" class="form-label">no rumah</label>
+                <input type="text" name="no_rumah" class="form-control" id="nama">
+            </div>
+    
+            <div class="mb-3">
+                <label for="rumah_sakit" class="form-label">rt/rw</label>
+                <input type="text" name="rt_rw" class="form-control" id="rumah_sakit">
+            </div>
+    
+            <div class="mb-3">
+                <label for="obat" class="form-label">total karung sampah</label>
+                <input type="text" name="total_karung_sampah" class="form-control" id="obat">
+            </div>
+            
+            {{-- <div class="mb-3">
+                <label for="rujukan" class="form-label">Kriteria</label>
+                <select name="kriteria" class="form-control" id="rujukan" onchange="show()">
+                    <option value="standar">Standar</option>
+                    <option value="collapse">Collapse</option>
+                </select>
+            </div> --}}
+    
+            <div class="mb-3">
+                <label for="apoteker" class="form-label">tanggal</label>
+                <input type="date" name="tanggal" class="form-control" id="apoteker">
+            </div>
+    
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="/sampah" class="btn btn-outline-dark">Back</a>
+        </form>
+    </div>
 
-        <div class="mb-3">
-            <label for="rujukan" class="form-label">Category</label>
-            <select name="rujukan" class="form-control" id="rujukan" onchange="show()">
-                <option value="true">Ya</option>
-                <option value="false">Tidak</option>
-            </select>
-        </div>
-
-        <div class="mb-3">
-            <label for="rumah_sakit" class="form-label">Rumah Sakit</label>
-            <input type="text" name="rumah_sakit" class="form-control" id="rumah_sakit">
-        </div>
-
-        <div class="mb-3">
-            <label for="obat" class="form-label">Obat</label>
-            <input type="text" name="obat" class="form-control" id="obat">
-        </div>
-        
-        <div class="mb-3">
-            <label for="harga_satuan" class="form-label">harga_satuan</label>
-            <input type="text" name="harga_satuan" class="form-control" id="harga_satuan">
-        </div>
-
-        <div class="mb-3">
-            <label for="apoteker" class="form-label">apoteker</label>
-            <input type="text" name="apoteker" class="form-control" id="apoteker">
-        </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</body>
 </body>
 </html>
     

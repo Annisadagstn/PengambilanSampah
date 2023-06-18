@@ -11,8 +11,7 @@
 
     <div class="m-5 px-5">
         <div class="mb-3 d-flex gap-3">
-            <a href="/sampah/tambah-data" class="btn btn-primary">+ Create</a>
-            <a href="/sampah/show/trash" class="btn btn-success">Show Trash Data</a>
+            <a href="/sampah" class="btn btn-outline-dark">back</a>
         </div>
         <table class="table table-dark">
             <thead>
@@ -38,9 +37,8 @@
                 <td>{{$sampah['kriteria']}}</td>
                 <td>{{$sampah['tanggal']}}</td>
                 <td class="d-flex justify-content-center gap-2">
-                  <a href={{route('show', $sampah['id'])}} class="btn btn-primary">Show</a>
-                  <a href={{route('edit_sampah', $sampah['id'])}} class="btn btn-success">Edit</a>
-                  <a href={{route('delete_sampah', $sampah['id'])}} class="btn btn-danger">Delete</a>
+                  <a href={{route('restore_sampah', $sampah['id'])}} class="btn btn-success">Restore</a>
+                  <a href={{route('delete_permanent_sampah', $sampah['id'])}} class="btn btn-danger">Delete</a>
                 </td>
               </tr>
               @endforeach

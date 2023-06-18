@@ -14,23 +14,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/store_trash', function () {
+Route::get('/store', function () {
 return view('create');
 });
 
-Route::post('/store_trash', function () {
-    return view('create');
-    });
+Route::post('/store', function () {
+return view('create');
+});
 
 
 
 
 Route::get('/sampah',[SampahController::class,'index']);
-Route::post('/sampah/store',[SampahController::class,'store_trash']);
+Route::get('/sampah/tambah-data', [SampahController::class, 'create']);
+Route::post('/sampah/store',[SampahController::class,'store'])->name("store_trash");
 Route::get('/generate-token',[SampahController::class,'generateToken']);
-Route::get('/sampah/{id}', [SampahController::class, 'show']);
-Route::patch('/sampah/update/{id}',[SampahController::class, 'update']);
-Route::delete('/sampah/delete/{id}',[SampahController::class, 'destroy']);
-Route::get('/sampah/show/trash', [SampahController::class, 'trash']);
-Route::get('/sampah/trash/restore/{id}', [SampahController::class, 'restore']);
-Route::get('/sampah/trash/delete/permanent/{id}', [SampahController::class, 'permanenDelete']);
+Route::get('/sampah/{id}', [SampahController::class, 'show'])->name('show');
+Route::get("/sampah/edit/{id}", [SampahController::class, 'edit'])->name('edit_sampah');
+Route::patch('/sampah/update/{id}',[SampahController::class, 'update'])->name('update_sampah');
+Route::get('/sampah/delete/{id}',[SampahController::class, 'destroy'])->name('delete_sampah');
+Route::get('/sampah/show/trash', [SampahController::class, 'trash'])->name('show_deleted_sampah');
+Route::get('/sampah/trash/restore/{id}', [SampahController::class, 'restore'])->name('restore_sampah');
+Route::get('/sampah/trash/delete/permanent/{id}', [SampahController::class, 'permanenDelete'])->name('delete_permanent_sampah');

@@ -12,39 +12,36 @@
 <body>
     <div class="w-50 m-auto py-5">
         <div class="d-flex justify-content-between align-items-center">
-            <h2>Edit Data Sampah Keluarga {{$sampah['kepala_keluarga']}}</h2>
+            <h2>Data Sampah Keluarga {{$sampah['kepala_keluarga']}}</h2>
             <a href="/sampah" class="btn btn-outline-dark">Back</a>
         </div>
-        <form action="{{route("update_sampah", $sampah['id'])}}" method="post">
+        <form>
         @csrf
-        @method('PATCH')
-      
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">kepala keluarga</label>
-              <input type="text" name="kepala_keluarga" class="form-control" id="exampleInputEmail1" value="{{$sampah['kepala_keluarga']}}">
+              <input type="email" class="form-control" id="exampleInputEmail1" value="{{$sampah['kepala_keluarga']}}">
               <div id="emailHelp" class="form-text"></div>
             </div>
             <div class="mb-3">
               <label for="exampleInputtext1" class="form-label">no rumah</label>
-              <input type="text" name="no_rumah" class="form-control" id="exampleInputtext1" value="{{$sampah['no_rumah']}}">
+              <input type="text" class="form-control" id="exampleInputtext1" value="{{$sampah['no_rumah']}}">
             </div>
             <div class="mb-3">
                 <label for="exampleInputtext1" class="form-label">rt/rw</label>
-                <input type="text" name="rt_rw" class="form-control" id="exampleInputtext1" value="{{$sampah['rt_rw']}}">
+                <input type="text" class="form-control" id="exampleInputtext1" value="{{$sampah['rt_rw']}}">
             </div>
             <div class="mb-3">
                 <label for="exampleInputtext1" class="form-label">total karung sampah</label>
-                <input type="text" name="total_karung_sampah" class="form-control" id="exampleInputtext1" value="{{$sampah['total_karung_sampah']}}">
+                <input type="text" class="form-control" id="exampleInputtext1" value="{{$sampah['total_karung_sampah']}}">
             </div>
-            {{-- <div class="mb-3">
+            <div class="mb-3">
                 <label for="exampleInputtext1" class="form-label">kriteria</label>
                 <input type="text" class="form-control" id="exampleInputtext1" value="{{$sampah['kriteria']}}">
-            </div> --}}
+            </div>
             <div class="mb-3">
                 <label for="exampleInputtext1" class="form-label">tanggal</label>
-                <input type="date" name="tanggal" class="form-control" id="exampleInputtext1" value="{{$sampah['tanggal']}}">
+                <input type="text" class="form-control" id="exampleInputtext1" value="{{$sampah['tanggal']}}">
             </div>
-            <button type="submit" class="btn btn-primary">Edit</button>
           </form>
     </div>
 </body>
